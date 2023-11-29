@@ -45,7 +45,7 @@ include('includes/config.php');
 				<a href="offers.html"><i class="fa fa-usd"></i></a>
 			</div>
 			<div class="rup-rgt">
-				<h3>UP TO USD. 50 OFF</h3>
+				<h3>UP TO USD. 0 OFF NOW</h3>
 				<h4><a href="offers.html">TRAVEL SMART</a></h4>
 				
 			</div>
@@ -56,8 +56,8 @@ include('includes/config.php');
 				<a href="offers.html"><i class="fa fa-h-square"></i></a>
 			</div>
 			<div class="rup-rgt">
-				<h3>UP TO 70% OFF</h3>
-				<h4><a href="offers.html">ON HOTELS ACROSS WORLD</a></h4>
+				<h3>UP TO FREE OFF NOW</h3>
+				<h4><a href="https://www.rema.gov.rw/our-work/link/biodiversity#:~:text=Rwanda%20has%20diverse%20ecosystems%20that,and%20open%20flower%2Dfilled%20marshes.">Why Biodiveristy in Rwanda?</a></h4>
 				
 			</div>
 				<div class="clearfix"></div>
