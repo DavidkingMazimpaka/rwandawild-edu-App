@@ -5,16 +5,16 @@ Installation Steps(Configuration)
 Database Configuration
 
 Open phpmyadmin
-Create Database tms
-Import database tms.sql (available inside zip package)
-Open Your browser put inside browser “http://localhost/tms”
+Create Database rwandawild-edu
+Import database rwandawild-edu.sql (available inside zip package)
+Open Your browser put inside browser ï¿½http://localhost/rwandawild-edu-Appï¿½
 
 Login Details for admin : 
-Open Your browser put inside browser “http://localhost/tms/admin”
+Open Your browser put inside browser ï¿½http://localhost/rws/adminï¿½
 Username : admin
 Password : Test@123
 
 Login Details for user: 
-Open Your browser put inside browser “http://localhost/tms/”
+Open Your browser put inside browser ï¿½http://localhost/rws/ï¿½
 Username : anuj@gmail.com
 Password : Test@123
