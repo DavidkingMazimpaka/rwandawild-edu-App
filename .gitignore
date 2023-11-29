@@ -1,0 +1,11 @@
+#secret
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.example
+
+#hidden
+rwandawild-edu.sql
+Readme.txt
