@@ -6,7 +6,7 @@
    - Download the project zip file and unzip it on your local system.
 
 2. **Copy to Root Directory:**
-   - Copy the 'tms' folder and 'tms' folder inside the root directory.
+   - Copy the 'rws' folder inside the root directory.
      - For XAMPP: `xampp/htdocs`
      - For WAMP: `wamp/www`
      - For LAMP: `var/www/html`
@@ -31,13 +31,13 @@
 - Access the admin panel at:
   - `http://localhost/rws/admin`
 - **Username:** admin
-- **Password:** Test@123
+- **Password:** Test@123 (I createded as a default)
 
 ## User Login Details:
 
 - Access the user portal at:
   - `http://localhost/rws/`
-- **Username:** anuj@gmail.com
+- **Username:** anuj@gmail.com (I createded as a default)
 - **Password:** Test@123
 
 ---
