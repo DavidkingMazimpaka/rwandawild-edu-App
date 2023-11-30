@@ -71,7 +71,7 @@
 							<li><a href="index.php">Home</a></li>
 							<li><a href="page.php?type=aboutus">About</a></li>
 								<li><a href="package-list.php">Programs</a></li>
-								<li><a href="page.php?type=privacy">Get Involved</a></li>
+								<li><a href="membership.php">Get Involved</a></li>
 								<li><a href="page.php?type=terms">Donate</a></li>
 								<li><a href="page.php?type=contact">Contact Us</a></li>
 								<?php if($_SESSION['login'])
