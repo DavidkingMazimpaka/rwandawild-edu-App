@@ -6,8 +6,8 @@
 			<li class="hm"><a href="index.html"><i class="fa fa-home"></i></a></li>
 			<li class="prnt"><a href="profile.php">My Profile</a></li>
 				<li class="prnt"><a href="change-password.php">Change Password</a></li>
-			<li class="prnt"><a href="tour-history.php">My Tour History</a></li>
-			<li class="prnt"><a href="issuetickets.php">Issue Tickets</a></li>
+			<li class="prnt"><a href="tour-history.php">My Programs History</a></li>
+			<li class="prnt"><a href="issuetickets.php">Issue Program</a></li>
 		</ul>
 		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
 			<li class="tol">Welcome :</li>				
@@ -72,7 +72,7 @@
 							<li><a href="page.php?type=aboutus">About</a></li>
 								<li><a href="package-list.php">Programs</a></li>
 								<li><a href="membership.php">Get Involved</a></li>
-								<li><a href="page.php?type=terms">Donate</a></li>
+								<li><a href="donate.php">Donate</a></li>
 								<li><a href="page.php?type=contact">Contact Us</a></li>
 								<?php if($_SESSION['login'])
 {?>

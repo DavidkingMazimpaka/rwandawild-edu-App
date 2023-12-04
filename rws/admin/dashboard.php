@@ -39,7 +39,7 @@ else{
 <?php include('includes/header.php');?>
 <!--header end here-->
 		<ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a> <i class="fa fa-angle-right"></i></li>
+                <li class="breadcrumb-item"><a href="dashboard.php">Home</a> <i class="fa fa-angle-right"></i></li>
             </ol>
 <!--four-grids here-->
 		<div class="four-grids">
@@ -106,13 +106,40 @@ else{
 						</div>
 					</div>
 					<div class="col-md-3 four-grid">
+						<div class="four-w3ls">
+							<div class="icon">
+								<i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
+							</div>
+							<a href="manage-enquiry.php">
+							<div class="four-text">
+								<h3>Donors</h3>
+								<?php $sql2 = "SELECT id from tblenquiry";
+									$query2= $dbh -> prepare($sql2);
+									$query2->execute();
+									$results2=$query2->fetchAll(PDO::FETCH_OBJ);
+									$cnt2=$query2->rowCount();
+								?>
+								<h4><?php echo htmlentities($cnt2);?></h4>
+								
+							</div>
+							</a>
+							
+						</div>
+					</div>
+				
+						<div class="clearfix"></div>
+					
+				</div>
+
+		<div class="four-grids">
+		<div class="col-md-3 four-grid">
 						<div class="four-wthree">
 							<div class="icon">
 								<i class="glyphicon glyphicon-briefcase" aria-hidden="true"></i>
 							</div>
 							<a href="manage-packages.php">
 							<div class="four-text">
-								<h3>Total packages</h3>
+								<h3>Total Programs</h3>
 								<?php $sql3 = "SELECT PackageId from tbltourpackages";
 									$query3= $dbh -> prepare($sql3);
 									$query3->execute();
@@ -125,10 +152,6 @@ else{
 							</a>
 						</div>
 					</div>
-						<div class="clearfix"></div>
-				</div>
-
-		<div class="four-grids">
 					<div class="col-md-3 four-grid">
 						<div class="four-w3ls">
 							<div class="icon">
@@ -152,6 +175,7 @@ else{
 
 					<div class="clearfix"></div>
 				</div>
+				
 <!--//four-grids here-->
 
 
