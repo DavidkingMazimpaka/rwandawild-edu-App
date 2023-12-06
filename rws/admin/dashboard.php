@@ -70,6 +70,7 @@ else{
 							<div class="icon">
 								<i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>
 							</div>
+							<a href="manage-programs.php">
 							<a href="manage-bookings.php">
 							<div class="four-text">
 								<h3>Enrolled Programs</h3>

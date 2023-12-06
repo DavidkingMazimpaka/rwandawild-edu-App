@@ -89,7 +89,7 @@ include('includes/config.php');
 
 
 	
-	<h3>Package List</h3>
+	<h3>Programs List</h3>
 
 					
 <?php $sql = "SELECT * from tbltourpackages order by rand() limit 4";
@@ -106,9 +106,9 @@ foreach($results as $result)
 					<img src="admin/pacakgeimages/<?php echo htmlentities($result->PackageImage);?>" class="img-responsive" alt="">
 				</div>
 				<div class="col-md-6 room-midle wow fadeInUp animated" data-wow-delay=".5s">
-					<h4>Package Name: <?php echo htmlentities($result->PackageName);?></h4>
-					<h6>Package Type : <?php echo htmlentities($result->PackageType);?></h6>
-					<p><b>Package Location :</b> <?php echo htmlentities($result->PackageLocation);?></p>
+					<h4>Programs Name: <?php echo htmlentities($result->PackageName);?></h4>
+					<h6>Program Type : <?php echo htmlentities($result->PackageType);?></h6>
+					<p><b>Program Location :</b> <?php echo htmlentities($result->PackageLocation);?></p>
 					<p><b>Features</b> <?php echo htmlentities($result->PackageFetures);?></p>
 				</div>
 				<div class="col-md-3 room-right wow fadeInRight animated" data-wow-delay=".5s">
@@ -121,7 +121,7 @@ foreach($results as $result)
 <?php }} ?>
 			
 		
-<div><a href="package-list.php" class="view">View More Packages</a></div>
+<div><a href="package-list.php" class="view">View More Programs</a></div>
 </div>
 			<div class="clearfix"></div>
 	</div>
@@ -136,7 +136,7 @@ foreach($results as $result)
 				<a href="#"><i class="glyphicon glyphicon-list-alt"></i></a>
 			</div>
 			<div class="rou-rgt wow fadeInDown animated" data-wow-delay=".5s">
-				<h3>80000</h3>
+				<h3>100</h3>
 				<p>Enquiries</p>
 			</div>
 				<div class="clearfix"></div>
@@ -146,8 +146,8 @@ foreach($results as $result)
 				<a href="#"><i class="fa fa-user"></i></a>
 			</div>
 			<div class="rou-rgt">
-				<h3>1900</h3>
-				<p>Regestered users</p>
+				<h3>10</h3>
+				<p>Registered users</p>
 			</div>
 				<div class="clearfix"></div>
 		</div>
@@ -156,8 +156,8 @@ foreach($results as $result)
 				<a href="#"><i class="fa fa-ticket"></i></a>
 			</div>
 			<div class="rou-rgt">
-				<h3>7,00,00,000+</h3>
-				<p>Booking</p>
+				<h3>1000+</h3>
+				<p>Programs</p>
 			</div>
 				<div class="clearfix"></div>
 		</div>

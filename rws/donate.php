@@ -5,6 +5,20 @@ include('includes/config.php');
 if(isset($_POST['submit1']))
 {
 $fname=$_POST['fname'];
+$lname=$_POST['lname'];
+$email=$_POST['email'];	
+$mobile=$_POST['mobileno'];
+$occup=$_POST['occupation'];	
+$amount=$_POST['amount'];
+$sql="INSERT INTO  tbldonate(firstname,lastname,email,phone,occupation,amount) VALUES(:fname,:lname,:email,:mobile,:occup,:amount)";
+$query = $dbh->prepare($sql);
+$query->bindParam(':fname',$fname,PDO::PARAM_STR);
+$query->bindParam(':lname',$lname,PDO::PARAM_STR);
+$query->bindParam(':email',$email,PDO::PARAM_STR);
+$query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
+$query->bindParam(':occup',$occup,PDO::PARAM_STR);
+$query->bindParam(':amount',$amount,PDO::PARAM_STR);
+=======
 $email=$_POST['email'];	
 $mobile=$_POST['mobileno'];
 $subject=$_POST['subject'];	

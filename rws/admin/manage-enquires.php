@@ -102,7 +102,7 @@ $msg="Enquiry  successfully read";
 				</div>
 <!--heder end here-->
 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a><i class="fa fa-angle-right"></i>Manage Enquiries</li>
+                <li class="breadcrumb-item"><a href="dashboard.php">Home</a><i class="fa fa-angle-right"></i>Manage Enquiries</li>
             </ol>
 <div class="agile-grids">	
 				<!-- tables -->
@@ -114,7 +114,7 @@ $msg="Enquiry  successfully read";
 					    <table id="table">
 						<thead>
 						  <tr>
-						  <th>Ticket id</th>
+						  <th>Session id</th>
 							<th>Name</th>
 							<th>Mobile No./ Email</th>
 							
