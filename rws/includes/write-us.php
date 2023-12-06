@@ -41,8 +41,8 @@ echo "<script type='text/javascript'> document.location = 'thankyou.php'; </scri
 												<li class="na-me">
 													<select id="country" name="issue" class="frm-field required sect" required="">
 														<option value="">Select Issue</option> 		
-														<option value="Booking Issues">Booking Issues</option>
-														<option value="Cancellation"> Cancellation</option>
+														<option value="Enrollement Issues">Enrollement Issues</option>
+														<option value="Cancel Program"> Cancel Program</option>
 														<option value="Refund">Refund</option>
 														<option value="Other">Other</option>														
 													</select>

@@ -18,8 +18,7 @@ $query = $dbh->prepare($sql);
 $query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query-> bindParam(':id',$id, PDO::PARAM_STR);
 $query -> execute();
-
-$msg="Memmbers  successfully Accepted";
+header("location:manage-members.php");
 }
 }
 ?>
@@ -103,7 +102,7 @@ $msg="Memmbers  successfully Accepted";
 <div class="agile-grids">	
 				<!-- tables -->
 				<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo header("location:manage-members.php") ?> </div><?php }?>
 				<div class="agile-tables">
 					<div class="w3l-table-info">
 					  <h2>Manage Memberships</h2>
@@ -151,7 +150,7 @@ foreach($results as $result)
 	?><td>Read</td>
 <?php } else {?>
 
-<td><a href="manage-members.php?id=<?php echo htmlentities($result->Member_Id);?>" onclick="return confirm('Do you want to allow this Member?')" >Verify a Member</a>
+<td><a href="manage-members.php?id=<?php echo htmlentities($result->Member_Id);?>" onclick="return confirm('Member Under Verification')" >Verify a Member</a>
 </td>
 <?php } ?>
 </tr>
