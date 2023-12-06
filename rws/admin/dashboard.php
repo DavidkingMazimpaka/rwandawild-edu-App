@@ -106,9 +106,9 @@ else{
 						</div>
 					</div>
 					<div class="col-md-3 four-grid">
-						<div class="four-w3ls">
+						<div class="four-agileinfo">
 							<div class="icon">
-								<i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
+								<i class="glyphicon glyphicon-plus-sign" aria-hidden="true"></i>
 							</div>
 							<a href="manage-donations.php">
 							<div class="four-text">
@@ -161,6 +161,25 @@ else{
 							<div class="four-text">
 								<h3>Issues Raised</h3>
 								<?php $sql5 = "SELECT id from tblissues";
+									$query5= $dbh -> prepare($sql5);
+									$query5->execute();
+									$results5=$query5->fetchAll(PDO::FETCH_OBJ);
+									$cnt5=$query5->rowCount();
+								?>
+								<h4><?php echo htmlentities($cnt5);?></h4>
+							</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 four-grid">
+						<div class="four-wthree">
+							<div class="icon">
+								<i class="glyphicon glyphicon-education" aria-hidden="true"></i>
+							</div>
+							<a href="manage-members.php">
+							<div class="four-text">
+								<h3>Memberships</h3>
+								<?php $sql5 = "SELECT Member_Id from tblmembers";
 									$query5= $dbh -> prepare($sql5);
 									$query5->execute();
 									$results5=$query5->fetchAll(PDO::FETCH_OBJ);
