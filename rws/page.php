@@ -118,7 +118,7 @@ foreach($results as $result)
 ?>
 
 		<div class="col-md-12" id="div1">
-		<h3 class="wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Our Mission</h3>
+		<h3 class="wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;"><?php echo htmlentities($result->type); ?></h3>
 		
 		
 <h5><?php 	echo $result->detail; ?></h5><br>
