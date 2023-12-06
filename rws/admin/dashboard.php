@@ -71,7 +71,6 @@ else{
 								<i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>
 							</div>
 							<a href="manage-programs.php">
-							<a href="manage-bookings.php">
 							<div class="four-text">
 								<h3>Enrolled Programs</h3>
 									<?php $sql1 = "SELECT BookingId from tblbooking";
@@ -111,9 +110,9 @@ else{
 							<div class="icon">
 								<i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
 							</div>
-							<a href="manage-enquiry.php">
+							<a href="manage-donations.php">
 							<div class="four-text">
-								<h3>Donors</h3>
+								<h3>Donations</h3>
 								<?php $sql2 = "SELECT id from tblenquiry";
 									$query2= $dbh -> prepare($sql2);
 									$query2->execute();
