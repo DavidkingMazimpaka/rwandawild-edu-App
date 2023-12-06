@@ -18,23 +18,12 @@ $query->bindParam(':email',$email,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
 $query->bindParam(':occup',$occup,PDO::PARAM_STR);
 $query->bindParam(':amount',$amount,PDO::PARAM_STR);
-=======
-$email=$_POST['email'];	
-$mobile=$_POST['mobileno'];
-$subject=$_POST['subject'];	
-$description=$_POST['description'];
-$sql="INSERT INTO  tblenquiry(FullName,EmailId,MobileNumber,Subject,Description) VALUES(:fname,:email,:mobile,:subject,:description)";
-$query = $dbh->prepare($sql);
-$query->bindParam(':fname',$fname,PDO::PARAM_STR);
-$query->bindParam(':email',$email,PDO::PARAM_STR);
-$query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
-$query->bindParam(':subject',$subject,PDO::PARAM_STR);
-$query->bindParam(':description',$description,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-$msg="Enquiry  Successfully submited";
+$msg="Donation submitted successfully";
+header('location:donate.php');
 }
 else 
 {
@@ -42,7 +31,6 @@ $error="Something went wrong. Please try again";
 }
 
 }
-
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -139,7 +127,7 @@ $error="Something went wrong. Please try again";
         <b>Occupation</b>  <input type="text" name="occupation" class="form-control" id="subject"  placeholder="Your occupation" required="">
 	</p> 
     <p style="width: 350px;">
-        <b>Amout</b>  <input type="number" name="amount" class="form-control" id="subject"  placeholder="Enter Amount" required="">
+        <b>Amout</b>  <input type="number" name="amount" class="form-control" id="subject"  placeholder="Enter Amount RWF" required="">
 	</p> 
 	
 			<p style="width: 350px;">
