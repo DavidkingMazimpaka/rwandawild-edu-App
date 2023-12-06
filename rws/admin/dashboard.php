@@ -89,7 +89,7 @@ else{
 							<div class="icon">
 								<i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
 							</div>
-							<a href="manage-enquiry.php">
+							<a href="manage-enquiries.php">
 							<div class="four-text">
 								<h3>Enquiries</h3>
 								<?php $sql2 = "SELECT id from tblenquiry";
