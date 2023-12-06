@@ -22,7 +22,9 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-$msg="Booked Successfully";
+	echo "<script>alert('Enrolling successfull.');
+	window.location.href='package-list.php';</script>";
+	// header("Location:package-list.php");
 }
 else 
 {

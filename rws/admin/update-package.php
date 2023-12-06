@@ -165,7 +165,7 @@ foreach($results as $result)
 
 								<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">
-				<button type="submit" name="submit" class="btn-primary btn">Update</button> &nbsp; <button type="submit" name="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
+				<button type="submit" name="submit" class="btn-primary btn">Update</button> &nbsp;
 			</div>
 		</div>
 						

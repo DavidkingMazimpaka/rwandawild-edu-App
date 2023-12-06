@@ -57,7 +57,7 @@ else{
 <?php include('includes/header.php');?>
 <div class="banner-1 ">
 	<div class="container">
-		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">TMS-Tourism Management System</h1>
+		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">RWS - RwandaWildlife & Education System</h1>
 	</div>
 </div>
 <!--- /banner-1 ---->
@@ -72,7 +72,7 @@ else{
 	<table border="1" width="100%">
 <tr align="center">
 <th>#</th>
-<th>Ticket Id</th>
+<th>Issue Id</th>
 <th>Issue</th>	
 <th>Description</th>
 <th>Admin Remark</th>

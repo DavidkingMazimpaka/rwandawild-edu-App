@@ -151,7 +151,7 @@ foreach($results as $result)
 	?><td>Read</td>
 <?php } else {?>
 
-<td><a href="manage-donations.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Confirm Donation Payment')" >Payment Pending</a>
+<td><a href="manage-donations.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Payment Uncompleted')" >Payment Pending</a>
 </td>
 <?php } ?>
 </tr>

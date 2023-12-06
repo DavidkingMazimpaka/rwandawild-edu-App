@@ -8,43 +8,24 @@ header('location:index.php');
 }
 else{ 
 	// code for cancel
-if(isset($_REQUEST['bkid']))
+if(isset($_REQUEST['Member_Id']))
 	{
-$bid=intval($_GET['bkid']);
-$status=2;
-$cancelby='a';
-$sql = "UPDATE tblbooking SET status=:status,CancelledBy=:cancelby WHERE  BookingId=:bid";
-$query = $dbh->prepare($sql);
-$query -> bindParam(':status',$status, PDO::PARAM_STR);
-$query -> bindParam(':cancelby',$cancelby , PDO::PARAM_STR);
-$query-> bindParam(':bid',$bid, PDO::PARAM_STR);
-$query -> execute();
-
-$msg="Enrolling Cancelled successfully";
-}
-}
-
-if(isset($_REQUEST['bckid']))
-	{
-$bcid=intval($_GET['bckid']);
+$id=intval($_GET['Member_Id']);
 $status=1;
-$cancelby='a';
-$sql = "UPDATE tblbooking SET status=:status WHERE BookingId=:bcid";
+
+$sql = "UPDATE tbldonate SET Status=:status WHERE  Member_Id=:id";
 $query = $dbh->prepare($sql);
 $query -> bindParam(':status',$status, PDO::PARAM_STR);
-$query-> bindParam(':bcid',$bcid, PDO::PARAM_STR);
+$query-> bindParam(':id',$id, PDO::PARAM_STR);
 $query -> execute();
-$msg="Booking Confirm successfully";
+header("location:manage-members.php");
 }
-
-
-
-
-	?>
+}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>RWS | Admin manage Session Bookings</title>
+<title>RWS | Admin manage Memmberships</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -116,75 +97,64 @@ $msg="Booking Confirm successfully";
 				</div>
 <!--heder end here-->
 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="dashboard.php">Home</a><i class="fa fa-angle-right"></i>Manage Enrolled Programs</li>
+                <li class="breadcrumb-item"><a href="dashboard.php">Home</a><i class="fa fa-angle-right"></i>Manage Memmberships</li>
             </ol>
 <div class="agile-grids">	
 				<!-- tables -->
 				<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo header("location:manage-members.php") ?> </div><?php }?>
 				<div class="agile-tables">
 					<div class="w3l-table-info">
-					  <h2>Manage Enrolled Programs</h2>
+					  <h2>Manage Memberships</h2>
 					    <table id="table">
 						<thead>
 						  <tr>
-						  <th>Programs id</th>
-							<th>Name</th>
-							<th>Mobile No.</th>
-							<th>Email Id</th>
-							<th>Program Name</th>
-							<th>From /To </th>
-							<th>Comment </th>
+						  <th>MemberId</th>
+							<th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+							<th>Mobile No</th>
+                            <th>Birth Date</th>
+                            <th>Qualification</th>
+                            <th>Occupation</th>
+                            <th>Interest</th>
+							<th>Regdate</th>
 							<th>Status </th>
-							<th>Action </th>
+							
 						  </tr>
 						</thead>
 						<tbody>
-<?php $sql = "SELECT tblbooking.BookingId as bookid,tblusers.FullName as fname,tblusers.MobileNumber as mnumber,tblusers.EmailId as email,tbltourpackages.PackageName as pckname,tblbooking.PackageId as pid,tblbooking.FromDate as fdate,tblbooking.ToDate as tdate,tblbooking.Comment as comment,tblbooking.status as status,tblbooking.CancelledBy as cancelby,tblbooking.UpdationDate as upddate from tblusers join  tblbooking on  tblbooking.UserEmail=tblusers.EmailId join tbltourpackages on tbltourpackages.PackageId=tblbooking.PackageId";
+<?php $sql = "SELECT * from tblmembers";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
+
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
 {				?>		
 						  <tr>
-							<td>#PRGM-<?php echo htmlentities($result->bookid);?></td>
-							<td><?php echo htmlentities($result->fname);?></td>
-							<td><?php echo htmlentities($result->mnumber);?></td>
-							<td><?php echo htmlentities($result->email);?></td>
-							<td><a href="update-package.php?pid=<?php echo htmlentities($result->pid);?>"><?php echo htmlentities($result->pckname);?></a></td>
-							<td><?php echo htmlentities($result->fdate);?> To <?php echo htmlentities($result->tdate);?></td>
-								<td><?php echo htmlentities($result->comment);?></td>
-								<td><?php if($result->status==0)
+							<td width="120">#Mbr-<?php echo htmlentities($result->Member_Id);?></td>
+							<td width="50"><?php echo htmlentities($result->firstname);?></td>
+                            <td width="50"><?php echo htmlentities($result->lastname);?></td>
+                            <td width="50"><?php echo htmlentities($result->email);?></td>
+                            <td width="50"><?php echo htmlentities($result->phone);?></td>
+                            <td width="50"><?php echo htmlentities($result->dob);?></td>
+                            <td width="50"><?php echo htmlentities($result->qualification);?></td>
+							<td width="200"><?php echo htmlentities($result->occupation);?></a></td>
+							<td width="400"><?php echo htmlentities($result->interest);?></td>
+							
+								<td width="50"><?php echo htmlentities($result->RegDate);?></td>
+								<?php if($result->Status==1)
 {
-echo "Pending";
-}
-if($result->status==1)
-{
-echo "Confirmed";
-}
-if($result->status==2 and  $result->cancelby=='a')
-{
-echo "Canceled by you at " .$result->upddate;
-} 
-if($result->status==2 and $result->cancelby=='u')
-{
-echo "Canceled by User at " .$result->upddate;
-
-}
-?></td>
-
-<?php if($result->status==2)
-{
-	?><td>Cancelled</td>
+	?><td>Read</td>
 <?php } else {?>
-<td><a href="manage-bookings.php?bkid=<?php echo htmlentities($result->bookid);?>" onclick="return confirm('Do you really want to cancel booking')" >Cancel</a> / <a href="manage-bookings.php?bckid=<?php echo htmlentities($result->bookid);?>" onclick="return confirm('booking has been confirm')" >Confirm</a></td>
-<?php }?>
 
-						  </tr>
-						 <?php $cnt=$cnt+1;} }?>
+<td><a href="manage-members.php?id=<?php echo htmlentities($result->Member_Id);?>" onclick="return confirm('Member Under Verification')" >Verify a Member</a>
+</td>
+<?php } ?>
+</tr>
+						 <?php } }?>
 						</tbody>
 					  </table>
 					</div>
@@ -252,4 +222,3 @@ echo "Canceled by User at " .$result->upddate;
 
 </body>
 </html>
-<!--  -->
