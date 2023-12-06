@@ -132,7 +132,7 @@ $msg="Booking Confirm successfully";
 							<th>Name</th>
 							<th>Mobile No.</th>
 							<th>Email Id</th>
-							<th>RegDate </th>
+							<th>Program Name</th>
 							<th>From /To </th>
 							<th>Comment </th>
 							<th>Status </th>
@@ -150,7 +150,7 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {				?>		
 						  <tr>
-							<td>#BK-<?php echo htmlentities($result->bookid);?></td>
+							<td>#PRGM-<?php echo htmlentities($result->bookid);?></td>
 							<td><?php echo htmlentities($result->fname);?></td>
 							<td><?php echo htmlentities($result->mnumber);?></td>
 							<td><?php echo htmlentities($result->email);?></td>
